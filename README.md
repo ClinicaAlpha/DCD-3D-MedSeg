@@ -42,19 +42,6 @@ cd DCD-3D-MedSeg
 pip install -e .
 ```
 
-Optional Weights & Biases logging support:
-
-```bash
-pip install -e ".[logging]"
-```
-
-Verify the installation:
-
-```bash
-dcd_train --help
-python -c "from nnunetv2.training.distillation.methods import METHOD_REGISTRY; print(sorted(METHOD_REGISTRY))"
-```
-
 Set nnU-Net paths before preprocessing or training:
 
 ```bash
