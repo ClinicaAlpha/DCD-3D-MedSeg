@@ -74,8 +74,7 @@ nnUNetv2_plan_and_preprocess \
 
 ## Training
 
-Train a full teacher with standard nnU-Net first. The DCD configs expect the
-teacher checkpoints and plans under `$nnUNet_results`.
+Train a full teacher with standard nnU-Net first. 
 
 BraTS 2024 GLI teacher example:
 
