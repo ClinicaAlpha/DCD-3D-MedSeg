@@ -22,7 +22,11 @@ The released YAML files reproduce the method settings used for these rows.
 
 ## Installation
 
-Recommended environment:
+DCD-3D-MedSeg is built on nnU-Net v2. Set up a working nnU-Net v2 environment
+first by following the official nnU-Net README:
+https://github.com/MIC-DKFZ/nnUNet
+
+Recommended base environment:
 
 - Linux
 - Python 3.10 or newer
@@ -37,9 +41,10 @@ conda activate dcd_3dmedseg
 python -m pip install --upgrade pip
 ```
 
-If you reuse an existing environment that already has nnU-Net installed,
-uninstall it first because this repository is an nnU-Net fork and uses the same
-`nnunetv2` Python package namespace:
+After installing the nnU-Net dependencies, install this repository. If the
+official `nnunetv2` package is already installed in the same environment,
+uninstall that package first because DCD-3D-MedSeg includes the nnU-Net code it
+uses and shares the same `nnunetv2` Python package namespace:
 
 ```bash
 pip uninstall -y nnunetv2 dcd-3d-medseg
