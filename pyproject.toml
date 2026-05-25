@@ -85,10 +85,10 @@ nnUNetv2_move_plans_between_datasets = "nnunetv2.experiment_planning.plans_for_p
 nnUNetv2_evaluate_folder = "nnunetv2.evaluation.evaluate_predictions:evaluate_folder_entry_point"
 nnUNetv2_evaluate_simple = "nnunetv2.evaluation.evaluate_predictions:evaluate_simple_entry_point"
 nnUNetv2_convert_MSD_dataset = "nnunetv2.dataset_conversion.convert_MSD_dataset:entry_point"
-dcd_train = "nnunetv2.training.distillation.train:main"
-dcd_prepare_brats2024_gli = "nnunetv2.dataset_conversion.dcd_prepare_brats2024_gli:main"
-dcd_prepare_isles2022_to_flair = "nnunetv2.dataset_conversion.prepare_isles2022_to_flair_grid:main"
-dcd_prepare_isles2022 = "nnunetv2.dataset_conversion.dcd_prepare_isles2022:main"
+dcd_train = "dcd_medseg.training.distillation.train:main"
+dcd_prepare_brats2024_gli = "dcd_medseg.dataset_conversion.dcd_prepare_brats2024_gli:main"
+dcd_prepare_isles2022_to_flair = "dcd_medseg.dataset_conversion.prepare_isles2022_to_flair_grid:main"
+dcd_prepare_isles2022 = "dcd_medseg.dataset_conversion.dcd_prepare_isles2022:main"
 
 [project.optional-dependencies]
 dev = [
@@ -105,7 +105,7 @@ requires = ["setuptools>=67.8.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["nnunetv2*"]
+include = ["nnunetv2*", "dcd_medseg*"]
 
 [tool.codespell]
 skip = '.git,*.pdf,*.svg'

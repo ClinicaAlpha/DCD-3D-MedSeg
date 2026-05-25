@@ -8,6 +8,9 @@ Stage-Wise Distillation for Efficient 3D MRI Segmentation."
 This repository is an nnU-Net v2.6.2 fork with the public DCD implementation
 used in our BraTS 2024 GLI and ISLES 2022 experiments.
 
+The DCD implementation lives in `dcd_medseg/`; `nnunetv2/` contains the
+underlying nnU-Net framework code used by the trainer.
+
 ## Results
 
 | Dataset | Method | mDice (%) | HD95 (mm) | NSD (%) |

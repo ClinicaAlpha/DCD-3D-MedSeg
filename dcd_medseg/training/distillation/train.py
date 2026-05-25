@@ -11,7 +11,7 @@ import torch
 from batchgenerators.utilities.file_and_folder_operations import join
 
 from nnunetv2.paths import nnUNet_preprocessed
-from nnunetv2.training.distillation import DistillationConfig, DistillationTrainer
+from . import DistillationConfig, DistillationTrainer
 
 
 def parse_args() -> argparse.Namespace:
@@ -79,7 +79,7 @@ def main() -> None:
         trainer.load_checkpoint(str(checkpoint))
 
     if args.verify_features:
-        from nnunetv2.training.distillation.utils import verify_feature_extraction
+        from .utils import verify_feature_extraction
 
         success = verify_feature_extraction(
             model=trainer.network,

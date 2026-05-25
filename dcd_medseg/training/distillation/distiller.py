@@ -45,7 +45,7 @@ class DistillationTrainer(nnUNetTrainer):
     - Extensive logging and checkpointing
 
     Example usage:
-        >>> from nnunetv2.training.distillation import DistillationTrainer, DistillationConfig
+        >>> from dcd_medseg.training.distillation import DistillationTrainer, DistillationConfig
         >>>
         >>> # Create config
         >>> config = DistillationConfig.from_yaml('config.yaml')
