@@ -19,12 +19,49 @@ The released YAML files reproduce the method settings used for these rows.
 
 ## Installation
 
-Create and activate a Python environment with CUDA-compatible PyTorch, then run:
+Recommended environment:
+
+- Linux
+- Python 3.10 or newer
+- CUDA-capable GPU
+- PyTorch 2.1.2 or newer
+
+Create and activate a clean conda environment:
+
+```bash
+conda create -n dcd_3dmedseg python=3.10 -y
+conda activate dcd_3dmedseg
+python -m pip install --upgrade pip
+```
+
+Install PyTorch for your CUDA driver. For example, for CUDA 12.1 wheels:
+
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cu121
+```
+
+If your system uses a different CUDA version, install the matching PyTorch build
+from the official PyTorch installation selector before installing this package.
+
+Clone and install DCD-3D-MedSeg:
 
 ```bash
 git clone https://github.com/ClinicaAlpha/DCD-3D-MedSeg.git
 cd DCD-3D-MedSeg
 pip install -e .
+```
+
+Optional Weights & Biases logging support:
+
+```bash
+pip install -e ".[logging]"
+```
+
+Verify the installation:
+
+```bash
+dcd_train --help
+python -c "from nnunetv2.training.distillation.methods import METHOD_REGISTRY; print(sorted(METHOD_REGISTRY))"
 ```
 
 Set nnU-Net paths before preprocessing or training:
@@ -34,6 +71,9 @@ export nnUNet_raw=/path/to/nnUNet_raw
 export nnUNet_preprocessed=/path/to/nnUNet_preprocessed
 export nnUNet_results=/path/to/nnUNet_results
 ```
+
+Add these exports to your shell startup file if you want them to persist across
+sessions.
 
 ## Data Preparation
 
@@ -74,7 +114,7 @@ nnUNetv2_plan_and_preprocess \
 
 ## Training
 
-Train a full teacher with standard nnU-Net first. 
+Train a full teacher with standard nnU-Net first.
 
 BraTS 2024 GLI teacher example:
 
