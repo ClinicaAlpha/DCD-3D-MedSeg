@@ -8,7 +8,6 @@ Stage-Wise Distillation for Efficient 3D MRI Segmentation."
 This repository is an nnU-Net v2.6.2 fork with the public DCD implementation
 used in our BraTS 2024 GLI and ISLES 2022 experiments.
 
-
 ## Results
 
 | Dataset | Method | mDice (%) | HD95 (mm) | NSD (%) |
@@ -110,9 +109,33 @@ If your teacher checkpoint or plans are stored under a different result folder,
 edit `teacher_checkpoint` and `teacher_plans` in the YAML before launching DCD
 training.
 
-The two public configs use `strategy: dcd`, `wavelet: db4`,
-`levels: 3`, `band: [6, 5, 4, 3, 2, 1]`, `layer_indices: all`, and a
-student channel reduction factor of 4.
+The public configs use the following DCD settings:
+
+```yaml
+strategy: dcd
+reduction_factor: 4
+strategy_config:
+  wavelet: db4
+  levels: 3
+  band: [6, 5, 4, 3, 2, 1]
+  layer_indices: all
+```
+
+Dataset-specific KD schedules are:
+
+```yaml
+# BraTS 2024 GLI
+kd_weight: 0.01
+kd_schedule: cosine_healing
+kd_warmup_start_epoch: 150
+kd_warmup_epochs: 800
+
+# ISLES 2022
+kd_weight: 0.05
+kd_schedule: cosine_healing
+kd_warmup_start_epoch: 100
+kd_warmup_epochs: 300
+```
 
 ## License
 
