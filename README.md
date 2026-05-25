@@ -7,7 +7,7 @@ Stage-Wise Distillation for Efficient 3D MRI Segmentation."
 
 This repository is an nnU-Net v2.6.2 fork with the public DCD implementation
 used in our BraTS 2024 GLI and ISLES 2022 experiments.
-No datasets, checkpoints, logs, or result files are included.
+
 
 ## Results
 
