@@ -121,23 +121,7 @@ strategy_config:
   layer_indices: all
 ```
 
-Dataset-specific KD schedules are:
-
-```yaml
-# BraTS 2024 GLI
-kd_weight: 0.01
-kd_schedule: cosine_healing
-kd_warmup_start_epoch: 150
-kd_warmup_epochs: 800
-
-# ISLES 2022
-kd_weight: 0.05
-kd_schedule: cosine_healing
-kd_warmup_start_epoch: 100
-kd_warmup_epochs: 300
-```
 
 ## License
 
-This project is released under the Apache License 2.0 because it is distributed
-as an nnU-Net fork. See `NOTICE` for attribution and modification notes.
+This project is released under the Apache License 2.0. See `NOTICE` for attribution and modification notes.
