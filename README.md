@@ -34,15 +34,6 @@ conda activate dcd_3dmedseg
 python -m pip install --upgrade pip
 ```
 
-Install PyTorch for your CUDA driver. For example, for CUDA 12.1 wheels:
-
-```bash
-pip install torch --index-url https://download.pytorch.org/whl/cu121
-```
-
-If your system uses a different CUDA version, install the matching PyTorch build
-from the official PyTorch installation selector before installing this package.
-
 Clone and install DCD-3D-MedSeg:
 
 ```bash
