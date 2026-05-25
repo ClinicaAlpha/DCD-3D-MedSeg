@@ -34,6 +34,14 @@ conda activate dcd_3dmedseg
 python -m pip install --upgrade pip
 ```
 
+If you reuse an existing environment that already has nnU-Net installed,
+uninstall it first because this repository is an nnU-Net fork and uses the same
+`nnunetv2` Python package namespace:
+
+```bash
+pip uninstall -y nnunetv2 dcd-3d-medseg
+```
+
 Clone and install DCD-3D-MedSeg:
 
 ```bash

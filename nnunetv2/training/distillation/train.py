@@ -55,8 +55,7 @@ def main() -> None:
     if config.strategy not in ("dcd", "none"):
         raise ValueError("This public DCD release supports only 'dcd' and 'none'.")
 
-    plans_override = config.student_plans or config.teacher_plans
-    dataset_json, plans = load_dataset_info(args.dataset, args.configuration, plans_override)
+    dataset_json, plans = load_dataset_info(args.dataset, args.configuration, config.student_plans)
 
     print("\nDCD configuration")
     print("=" * 70)

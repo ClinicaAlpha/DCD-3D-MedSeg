@@ -52,6 +52,7 @@ dependencies = [
     "seaborn",
     "imagecodecs",
     "yacs",
+    "PyYAML",
     "batchgeneratorsv2>=0.3.0",
     "einops",
     "blosc2>=3.0.0b1",
@@ -102,6 +103,9 @@ logging = [
 [build-system]
 requires = ["setuptools>=67.8.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["nnunetv2*"]
 
 [tool.codespell]
 skip = '.git,*.pdf,*.svg'

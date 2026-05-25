@@ -245,7 +245,7 @@ def setup_logging(config, trainer):
     try:
         import wandb
     except ImportError:
-        print("⚠️  wandb not installed. Skipping W&B logging.")
+        print("[WARN] wandb not installed. Skipping W&B logging.")
         return
 
     # Initialize wandb
