@@ -1,0 +1,11 @@
+DCD-3D-MedSeg
+
+This repository is based on nnU-Net v2.6.2:
+https://github.com/MIC-DKFZ/nnUNet
+
+nnU-Net is distributed under the Apache License 2.0 by the Division of Medical
+Image Computing, German Cancer Research Center (DKFZ), Heidelberg, Germany.
+
+ClinicaAlpha modifications include the Detail Consistent Distillation training
+code, public DCD training configs, and dataset preparation helpers for the
+released experiments.

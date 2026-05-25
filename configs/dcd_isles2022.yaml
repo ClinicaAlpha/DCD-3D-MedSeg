@@ -1,0 +1,32 @@
+teacher_checkpoint: ${nnUNet_results}/Dataset229_ISLES2022/nnUNetTrainer__nnUNetResEncUNetPlans__3d_fullres/fold_0/checkpoint_best.pth
+teacher_plans: ${nnUNet_results}/Dataset229_ISLES2022/nnUNetTrainer__nnUNetResEncUNetPlans__3d_fullres/plans.json
+freeze_teacher: true
+configuration: 3d_fullres
+reduction_factor: 4
+strategy: dcd
+strategy_config:
+  wavelet: db4
+  levels: 3
+  band: [6, 5, 4, 3, 2, 1]
+  layer_indices: all
+kd_weight: 0.05
+kd_schedule: cosine_healing
+kd_warmup_epochs: 300
+kd_warmup_start_epoch: 100
+num_epochs: 1000
+num_iterations_per_epoch: 150
+initial_lr: 0.01
+weight_decay: 0.00003
+early_stopping_patience: 60
+eval_with_best: true
+log_interval: 50
+wandb_project: null
+wandb_name: null
+experiment_tag: dcd_isles2022
+experiment_tag_mode: append
+mixed_precision: true
+compile_model: false
+num_workers: 12
+seed: 1234
+use_ema: true
+ema_decay: 0.999
